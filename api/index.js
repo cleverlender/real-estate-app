@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import userRouter from "./routes/user.route.js";
 
 // initialize dotenv (aka start it up)
 dotenv.config();
@@ -22,4 +23,7 @@ app.listen(3000, () => {
   console.log("The Server is running on port 3000!!!");
 });
 
-// Next section in Video: "Create  user database model"
+// Create an API route to the home page ('/')
+// req = Request - Data we get from the Browser/Client side
+// res = Response - Data we send back from the Server side
+app.use("/api/user", userRouter);
