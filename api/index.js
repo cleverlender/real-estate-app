@@ -24,7 +24,7 @@ const app = express();
 app.use(express.json());
 
 app.listen(3000, () => {
-  console.log("The Server is running on port 3000!!!");
+  console.log("The Server is running on port 3000!");
 });
 
 // Create an API route to the home page ('/')
@@ -32,3 +32,15 @@ app.listen(3000, () => {
 // res = Response - Data we send back from the Server side
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
+
+// Create a middleware that will take error (error coming from input), request (data from browser/client),
+// res (response from server side) and next (to go to the next middleware)
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
+  const message = err.message || "Internal Server Error";
+  return res.status(statusCode).json({
+    success: false,
+    statusCode,
+    message,
+  });
+});
