@@ -60,6 +60,7 @@ export default function Home() {
           Diamond Realty is the best place to find your next perfect place to
           live.
           <br />
+          <br />
           We have a wide range of properties for you to choose from.
         </div>
         <Link
@@ -93,12 +94,12 @@ export default function Home() {
           <div className="">
             <div className="my-3">
               <h2 className="text-2xl font-semibold text-slate-600">
-                Recent Offers
+                Recently Reduced Listings!
               </h2>
               <Link
                 className="text-sm text-blue-800 hover:underline"
                 to={"/search?offer=true"}>
-                Show more offers
+                Search more recently reduced
               </Link>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -112,12 +113,12 @@ export default function Home() {
           <div className="">
             <div className="my-3">
               <h2 className="text-2xl font-semibold text-slate-600">
-                Recent places for Rent
+                Recent Rental Listings!
               </h2>
               <Link
                 className="text-sm text-blue-800 hover:underline"
                 to={"/search?type=rent"}>
-                Show more places for rent
+                Search more rental listings
               </Link>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -131,12 +132,12 @@ export default function Home() {
           <div className="">
             <div className="my-3">
               <h2 className="text-2xl font-semibold text-slate-600">
-                Recent places for Sale
+                Recent For Sale Listings!
               </h2>
               <Link
                 className="text-sm text-blue-800 hover:underline"
                 to={"/search?type=sale"}>
-                Show more places for sale
+                Show more for sale listings
               </Link>
             </div>
             <div className="flex flex-wrap gap-4">
